@@ -7,7 +7,7 @@ import requests
 import ast
 import pickle
 
-path_geral='/app'
+path_geral='/opt/render/project/src'
 
 with open(path_geral+"/x.pkl", "rb") as f:
     flag  = pickle.load(f)
