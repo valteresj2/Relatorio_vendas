@@ -4,7 +4,7 @@ import yaml
 from yaml.loader import SafeLoader
 import pickle
 
-path_geral='/app'
+path_geral='/opt/render/project/src'
 
 with open(path_geral+'/credentials/config1.yml') as file:
     config = yaml.load(file, Loader=SafeLoader)
