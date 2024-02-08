@@ -11,6 +11,15 @@ path_geral='/opt/render/project/src'
 with open(path_geral+"/x.pkl", "rb") as f:
     flag  = pickle.load(f)
 
+st.session_state.refeicao=None
+st.session_state.combustivel=None
+st.session_state.funilaria=None
+st.session_state.oficina=None
+st.session_state.acessorios=None
+st.session_state.pneus=None
+st.session_state.lavagem=None
+st.session_state.comissao=None
+
 if flag:
 
     
@@ -67,19 +76,15 @@ if flag:
                     'valor_novo_gasto':[st.session_state.valor_others]
 
                     }
+                if on:
+                    dt['novo_gasto']=st.session_state.novo_gasto
+                    dt['outros_valores']=st.session_state.valor_others
                 dt=pd.DataFrame(dt)
                 local_file_Wpath=path_geral+'/db/base_gasto.csv'
                 dt.to_csv(local_file_Wpath,mode='a',index=False)
             
                 st.dataframe(dt)
-                st.session_state.refeicao=None
-                st.session_state.combustivel=None
-                st.session_state.funilaria=None
-                st.session_state.oficina=None
-                st.session_state.acessorios=None
-                st.session_state.pneus=None
-                st.session_state.lavagem=None
-                st.session_state.comissao=None
+               
     else:
         st.write("Não existe carro em situação aberta!")
 else:
