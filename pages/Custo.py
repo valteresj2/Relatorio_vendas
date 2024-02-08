@@ -81,7 +81,7 @@ if flag:
                     dt['outros_valores']=st.session_state.valor_others
                 dt=pd.DataFrame(dt)
                 local_file_Wpath=path_geral+'/db/base_gasto.csv'
-                dt.to_csv(local_file_Wpath,mode='a',index=False)
+                dt.to_csv(local_file_Wpath,mode='a',index=False,header=False)
             
                 st.dataframe(dt)
                
